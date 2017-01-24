@@ -1,0 +1,1 @@
+void log(char * str,int level=0);

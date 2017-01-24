@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.4)
+include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(${PROJECT_SOURCE_DIR}/src/util)
+include_directories(${PROJECT_SOURCE_DIR}/LuaJIT)
+include_directories(${PROJECT_SOURCE_DIR}/curl/include)
+link_directories (${PROJECT_SOURCE_DIR}/LuaJIT) 
+link_directories (${PROJECT_SOURCE_DIR}/curl/lib) 
+
+set(SRC_LIST main.cpp update.cpp util/util.cpp)
+add_executable(auto_update ${SRC_LIST})
+target_link_libraries(auto_update lua51 libcurl_imp)
